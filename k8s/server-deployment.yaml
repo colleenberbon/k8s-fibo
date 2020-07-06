@@ -14,7 +14,7 @@ spec:
     spec:
       containers: 
         - name: server
-          image: colleenberbon/k8s-fibo-api
+          image: colleenberbon/k8s-fibo-server
           ports:
             - containerPort: 5000
           env:
