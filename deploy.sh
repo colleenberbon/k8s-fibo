@@ -13,4 +13,3 @@ kubectl apply -f k8s
 kubectl set image deployments/client-deployment client=colleenberbon/gc-multi-client:$SHA
 kubectl set image deployments/server-deployment server=colleenberbon/gc-multi-api:$SHA
 kubectl set image deployments/worker-deployment worker=colleenberbon/gc-multi-worker:$SHA
-
