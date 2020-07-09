@@ -13,12 +13,12 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-k8s-282502
   - gcloud config set compute/zone asia-southeast1-a
-  - gcloud container clusters get-credentials multi-k8s
+  - gcloud container clusters get-credentials multi-k8s-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t colleenberbon/multi-k8s-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true colleenberbon/multi-k8s-test npm test
+  - docker run -e CI=true colleenberbon/multi-k8s-test npm run test
 
 deploy:
   provider: script
